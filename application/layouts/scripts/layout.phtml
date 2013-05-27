@@ -1,1 +1,25 @@
-<?php echo $this->layout()->content; ?>
+<?php echo $this->doctype() ?>
+<html lang="ja">
+  <head>
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headTitle(); ?>
+    <?php echo $this->headLink(array(
+        'rel' => 'shortcut icon', 
+        'href' => $this->baseUrl('/favicon.ico')
+      ), 'PREPEND')
+    ?>
+    <?php 
+    echo $this->jQuery()
+        // Twitter bootstrap
+        ->addJavaScriptFile($this->baseUrl('/js/bootstrap.js'))
+        ->addStylesheet($this->baseUrl('/css/bootstrap.css'))
+        ->addStylesheet($this->baseUrl('/css/base.css'))
+    ?>
+  </head>
+
+  <body>
+  <?php echo $this->layout()->content; ?>
+  </body>
+
+</html>
+<?php // vim:set ts=2 sts=2 sw=2 expandtab fdm=marker: ?>
