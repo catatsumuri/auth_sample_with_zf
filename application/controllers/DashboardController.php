@@ -1,7 +1,8 @@
 <?php
 
-class IndexController extends Zend_Controller_Action
+class DashboardController extends Zend_Controller_Action
 {
+
     private $_userinfo;
 
     public function init()
@@ -10,12 +11,7 @@ class IndexController extends Zend_Controller_Action
         $auth    	= Zend_Auth::getInstance();
         $storage 	= $auth->getStorage();
         $this->_userinfo = $storage->read();
-
-        if ($this->_userinfo) {
-            $this->_helper->redirector('index', 'dashboard');
-        } else {
-            $this->_helper->redirector('login', 'auth');
-        }
+        $this->view->userinfo = $this->_userinfo;
     }
 
     public function indexAction()
@@ -26,4 +22,7 @@ class IndexController extends Zend_Controller_Action
 
 }
 
+// {{{ Modeline
 // vim:set ts=4 sts=4 sw=4 expandtab:
+// vim600: fdm=marker
+// }}}

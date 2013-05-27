@@ -24,9 +24,8 @@
           <a class="brand" href="<?php echo $this->baseUrl('/')?>">簡単な認証サンプル</a>
         <?php if ($this->userinfo) : // {{{?>
         <div class="btn-group pull-right">
-          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> <?php echo $this->escape($this->userinfo->display_name)?> (<?php echo $this->escape($this->userinfo->account)?>)<span class="caret"></span></a>
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> (<?php echo $this->escape($this->userinfo->account)?>)<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="divider"></li>
             <li><a href="<?php echo $this->url(array('action' => 'logout', 'controller' => 'auth', 'module' => 'default'))?>">ログアウト</a></li>
           </ul>
         </div>

@@ -17,6 +17,9 @@
           <actionMethod actionName="login"/>
           <actionMethod actionName="logout"/>
         </controllerFile>
+        <controllerFile controllerName="Dashboard">
+          <actionMethod actionName="index"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory>
@@ -43,6 +46,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Auth">
             <viewScriptFile forActionName="login"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Dashboard">
+            <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
