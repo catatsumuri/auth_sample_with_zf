@@ -2,7 +2,6 @@
 <html lang="ja">
   <head>
     <?php echo $this->headMeta(); ?>
-    <?php echo $this->headTitle(); ?>
     <?php echo $this->headLink(array(
         'rel' => 'shortcut icon', 
         'href' => $this->baseUrl('/favicon.ico')
@@ -15,6 +14,7 @@
         ->addStylesheet($this->baseUrl('/css/bootstrap.css'))
         ->addStylesheet($this->baseUrl('/css/base.css'))
     ?>
+    <title>簡単な認証サンプル</title>
   </head>
 
   <body>
