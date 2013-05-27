@@ -1,4 +1,24 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Auth</b> and script/action name <b>login</b></p>
+<?php echo $this->flashMessage?>
+<?php if ($this->error) : ?>
+<div class="alert alert-block alert-error">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h4>Error!</h4>
+  <?php echo $this->translate($this->error) ?>
 </div>
+<?php endif; ?>
+
+<div class="hero-unit">
+  <h1>簡単な認証サンプル</h1>
+</div>
+
+<div align="center" data-role="fieldcontain">
+  <form class="form-inline login" action="<?php echo $this->url(array('action' => 'login'))?>" method="post">
+    <input type="text" name="username" class="input-large" placeholder="ログインID" required>
+    <input type="password" name="password" class="input-large" placeholder="パスワード" required>
+
+    <input type="hidden" name="path" value="<?php echo $this->escape($this->path)?>">
+    <button type="submit" class="btn"><?php echo $this->translate('ログイン')?></button>
+  </form>
+</div>
+<?php // vim:set ts=2 sts=2 sw=2 expandtab fdm=marker: ?>
+
